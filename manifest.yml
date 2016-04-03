@@ -1,12 +1,11 @@
 applications:
 - path: .
-  memory: 128M
-  instances: 1
+  memory: 1GB
+  instances: 4
   domain: mybluemix.net
   name: gatechclasses
   host: gatechclasses
   disk_quota: 1024M
   services:
-  - ClearDB MySQL Database-k0
   - my-test-mysql-db
   buildpack: php_buildpack
