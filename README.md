@@ -1,6 +1,7 @@
 #Crc Development Timeline
 ##Developer : Beiwen Liu
-###Objective : A self-sustaining web application that acts as an online platform for CRC Staff members to input data, and as a resource that dynamically provides the total number of people at the gym and statistics to 14 designated areas of the gym floor
+###Objective :
+####A self-sustaining web application that acts as an online platform for CRC Staff members to input data, and as a resource that dynamically provides the total number of people at the gym and statistics to 14 designated areas of the gym floor
 ===
 
 ##### Read 
