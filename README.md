@@ -1,8 +1,9 @@
 Crc Development Timeline
+===
 
-March 26:
+##March 26:
 
-The beginning of this timeline for documentation:
+#####The beginning of this timeline for documentation:
 
 List of created important files:
 •	Index.php
