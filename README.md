@@ -1,36 +1,39 @@
-Crc Development Timeline
+#Crc Development Timeline
+##Developer : Beiwen Liu
+###Purpose : personal documentation and progress for this web application
+###Objective : A self-sustaining web application that acts as an online platform for CRC Staff members to input data, and as a resource that dynamically provides the total number of people at the gym and statistics to 14 designated areas of the gym floor
 ===
 
 ##March 26:
 
-#####The beginning of this timeline for documentation:
+#####The beginning of this timeline for documentation (The following information lists the progress prior to exporting to github)
 
 List of created important files:
-•	Index.php
-•	Loginpage.php
-•	InputForm.php
-•	InputFormData.php
-•	InputFormHelper.php
-•	Session.php
-•	Db.php
-•	InputForm.css
-•	Loginpage.css
-•	inputForm.js
-•	inputForm2.js
-•	inputFormJQuery.js
-•	date.js (external library)
+* Index.php
+* Loginpage.php
+* InputForm.php
+*	InputFormData.php
+*	InputFormHelper.php
+*	Session.php
+*	Db.php
+*	InputForm.css
+*	Loginpage.css
+*	inputForm.js
+*	inputForm2.js
+*	inputFormJQuery.js
+*	date.js (external library)
 
-List of important features that have been implemented within these files:
-•	Index.php
-o	Original bootstrap template modified		
-	Map section removed
-	About section removed
-	Download section removed
-	Default pictures replaced
-	Navigation bar tabs changed to linking to other php files instead of referring to a class within the same page
-	Admin Login page created in the Navigation bar
-	Contact page created in the Navigation bar
-•	Loginpage.php
+#####List of important features that have been implemented within these files:
+*	Index.php
+ * Original bootstrap template modified		
+   * Map section removed
+    * About section removed
+    * Download section removed
+    * Default pictures replaced
+    * Navigation bar tabs changed to linking to other php files instead of referring to a class within the same page
+    * Admin Login page created in the Navigation bar
+    * Contact page created in the Navigation bar
+*	Loginpage.php
 o	Following (created) files are linked to this page:
 	Loginpage.css
 •	Used for styling the div’s and inputs
