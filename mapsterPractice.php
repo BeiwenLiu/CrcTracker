@@ -38,8 +38,6 @@
 
 <img src="images/CrcFloorPlanAlt.png" id="shape1" width="1927" height="1501" alt="Insert Alt" usemap="#shape1" border="0">
 
-<img src="path/to/your/image.png" width="1927" height="1501" alt="Insert Alt" usemap="#image_map" border="0">
-
 <map name="shape1" id="image_map">
     <area shape="poly" coords=" 558,1424" href="http://image-mapper.com" alt="red hotspot"/>
     <area shape="poly" coords=" 700,1150, 811,1180, 1085,1161, 1092,1167, 1204,1164, 1204,934, 1205,932, 699,940, 701,1147" href="http://image-mapper.com" alt="green hotspot"/>
