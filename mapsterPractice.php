@@ -36,20 +36,35 @@
 <body>
 
 
-<img src="images/CrcFloorPlan.jpg" id="shape1" width="1927" height="1501" alt="Insert Alt" usemap="#shape1" border="0">
+<img src="images/CrcFloorPlan.png" id="shape1" width="1927" height="1501" alt="Insert Alt" usemap="#shape1" border="0">
 
 <map name="shape1" id="image_map">
-	<label>hey</label>
-	<area shape="poly" coords=" 718,828, 1114,834, 1122,1172, 726,1193, 717,834" href="http://image-mapper.com" alt="green hotspot"/>
+	<area date-key="TX" shape="poly" coords=" 740,807, 1103,823, 1110,1172, 722,1181, 737,809" href="#" alt="red hotspot"/>
+	<area date-key="X" shape="poly" coords=" 437,265, 714,286, 701,592, 449,601, 420,273, 441,264" href="#" alt="green hotspot"/>
+	<area date-key="Y" shape="poly" coords=" 1391,763, 943,741, 1006,463, 1419,526, 1402,765" href="#" alt="purple hotspot"/>
+	<area date-key="Z" shape="poly" coords=" 411,743, 454,741, 492,741, 494,738, 497,734, 501,731, 506,732, 510,732, 514,728, 519,727, 525,728, 530,730, 533,737, 534,744, 532,748, 528,752, 522,755, 514,755, 510,750, 508,748, 504,749, 498,749, 495,747, 492,745" href="#" alt="yellow hotspot"/>
 </map>
 
 
 <script language="javascript">
 $(document).ready(function() {
 	$('#shape1').mapster({
-		
-		fillColor: 'ff0000',
-        fillOpacity: .3
+		mapKey: 'date-key',
+		stroke: true,
+        render_highlight: {
+            strokeWidth: 2
+        }
+        // areas: [{
+        //     key: 'TX',
+        //     stroke: false,
+        //     render_select: { 
+        //         fillOpacity: 1 
+        //     }
+        // },
+        // { 
+        //     key: 'X',
+        //     fill: false
+        // }]
 });
 });
 </script>
