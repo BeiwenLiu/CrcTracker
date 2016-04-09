@@ -32,7 +32,7 @@
     <![endif]-->
 
     <script language="javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-
+    <script language="javascript" src="js/inputForm.js"></script>
     
     <script language="javascript" src="js/jquery.imagemapster.js"></script>
     
@@ -112,7 +112,16 @@
     </section>
 -->
     <section id="map1">
-    
+    <div class="line"></div>
+        <label class="title" id="labelid"></label>
+        <script type="text/javascript">
+                        setDate();
+                </script>
+        <label id="timeid" class="title">
+        </label>
+         <script type="text/javascript">
+                        setInterval(updateClock, 1000);
+                </script>
 <img src="images/CrcFloorPlanAlt.png" class="imageResize" id="shape1"  alt="Insert Alt" usemap="#shape1" border="0">
 
 <map name="shape1" id="image_map">
@@ -159,6 +168,8 @@ $(document).ready(function() {
 });
 });
 </script>
+        
+        <div class="line"></div>
 
     <!-- <div class="fb-connect"></div> -->
     </section>
