@@ -30,18 +30,25 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-    <script language="javascript" src="js/jquery.imagemapster.js"></script>
 
+    <script language="javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+
+    
+    <script language="javascript" src="js/jquery.imagemapster.js"></script>
+    
+    <script language="javascript" src="js/imageResize.js"></script>
+    <script language="javascript" src="toggle.js"></script>
+
+    
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-custom navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <button id="toggle" type="button" class="navbar-toggle" >
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">
@@ -50,7 +57,7 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <div id="toggleDiv" class="collapse navbar-collapse navbar-right navbar-main-collapse">
                 <ul class="nav navbar-nav">
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                     <li class="hidden">
@@ -104,9 +111,9 @@
         </div>
     </section>
 -->
-    <!-- <section id="map1"> -->
+    <section id="map1">
     
-<img src="images/CrcFloorPlanAlt.png" id="shape1"  alt="Insert Alt" usemap="#shape1" border="0">
+<img src="images/CrcFloorPlanAlt.png" class="imageResize" id="shape1"  alt="Insert Alt" usemap="#shape1" border="0">
 
 <map name="shape1" id="image_map">
     <area shape="poly" coords=" 558,1424" href="#" alt="red hotspot"/>
@@ -154,7 +161,7 @@ $(document).ready(function() {
 </script>
 
     <!-- <div class="fb-connect"></div> -->
-    <!-- </section> -->
+    </section>
 
     <!-- Contact Section -->
     <!-- <section id="contact" class="container content-section text-center">
@@ -183,9 +190,10 @@ $(document).ready(function() {
         </div>
     </footer>
 
+    <!-- // <script src="js/jquery.js"></script> -->
     <!-- jQuery -->
-    <!--
-   <script src="js/jquery.js"></script>
+     <!-- 
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     -->
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>

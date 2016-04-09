@@ -1,7 +1,7 @@
 applications:
 - path: .
   memory: 1GB
-  instances: 4
+  instances: 1
   domain: mybluemix.net
   name: gatechclasses
   host: gatechclasses
