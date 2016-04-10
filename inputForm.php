@@ -143,6 +143,12 @@ $form = new InputFormData;
                 <?php }?>
                     </tr>
                 <?php }?>
+                <tr>
+                    <td>Total</td>
+                    <?php for($x = 0; $x < 17; $x++) {?>
+                    <td><label class="total"></label></td>
+                    <?php } ?>
+                </tr>
             
                 
         </table>

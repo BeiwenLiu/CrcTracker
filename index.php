@@ -111,7 +111,10 @@
         </div>
     </section>
 -->
+    
+    
     <section id="map1">
+        
     <div class="line"></div>
         <label class="title" id="labelid"></label>
         <script type="text/javascript">
@@ -122,6 +125,7 @@
          <script type="text/javascript">
                         setInterval(updateClock, 1000);
                 </script>
+        <label class="title" id="number">Number of people</label>
 <img src="images/CrcFloorPlanAlt.png" class="imageResize" id="shape1"  alt="Insert Alt" usemap="#shape1" border="0">
 
 <map name="shape1" id="image_map">
