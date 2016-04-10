@@ -29,7 +29,7 @@
                     if (isset($_POST[$temp])) {
                         if ($_POST[$temp] != "") {
                             //"."{$date}"."','"."{$titles}"."','"."{$t}"."','"."{$_POST[$temp]}"."
-                            $sqlCheck = "SELECT `Zone`, `Time` FROM `sheet` WHERE `Zone`='$titles' AND `Time`='$t'";
+                            $sqlCheck = "SELECT `Zone`, `Time` FROM `sheet` WHERE `Date`='$date' AND `Zone`='$titles' AND `Time`='$t'";
                             $tempRow = $conn->query($sqlCheck);
                             if ($tempRow->num_rows == 0) {
                                 $sql = "INSERT INTO `sheet`(`Date`, `Zone`, `Time`, `People`) VALUES ('$date','$titles','$t','$_POST[$temp]')";

@@ -145,8 +145,18 @@ $form = new InputFormData;
                 <?php }?>
                 <tr>
                     <td>Total</td>
-                    <?php for($x = 0; $x < 17; $x++) {?>
-                    <td><label class="total"></label></td>
+                <?php foreach ($newTimes as $t) {?>
+                        <?php $totalNumber = 0; ?>
+                    <?php foreach ($newArray as $t1) { ?>
+                        <?php $temp = "{$t1}" . "{$t}"; ?>
+                        <?php if (isset($_POST[$temp])) { ?>
+                            <?php if ($_POST[$temp] != "") { ?>
+                                <?php $totalNumber = $totalNumber + $_POST[$temp]; ?>
+                            <?php } } ?>
+                    <?php } ?>
+                    <?php if (isset($totalNumber)) { ?>
+                        <td><label class="total"> <?php echo $totalNumber; ?> </label></td>
+                            <?php } ?> 
                     <?php } ?>
                 </tr>
             

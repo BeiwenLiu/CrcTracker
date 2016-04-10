@@ -47,11 +47,11 @@
 #number {
     border: 1px solid white;
     margin-top:20px;
-    font-family:monospace;
+    font-family:sans-serif;
     font-size:28px;
 }
 
 #last {
     font-size:15px;
-    font-family: inherit;
+    font-family:sans-serif;
 }
