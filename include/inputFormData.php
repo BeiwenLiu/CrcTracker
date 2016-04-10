@@ -42,6 +42,19 @@
                     }
                 }
             }
+            foreach ($newTimes as $time) {
+                $temp = 'Time' . $time;
+                if ($_POST[$temp] != 0) {
+                    $sqlCheck = "SELECT `Zone`, `Time` FROM `sheet` WHERE `Date`='$date' AND `Zone`='Time' AND `Time`='$time'";
+                    $tempRow = $conn->query($sqlCheck);
+                    if ($tempRow->num_rows == 0) {
+                        $sql = "INSERT INTO `sheet`(`Date`, `Zone`, `Time`, `People`) VALUES ('$date','Time','$time','$_POST[$temp]')";
+                    } else {
+                        $update = "UPDATE `sheet` SET `People`='$_POST[$temp]' WHERE `Date`='$date' AND `Zone`='Time' AND `Time`='$time'";
+                    }
+                }
+            }
+                        
             $conn->close();
         }
 

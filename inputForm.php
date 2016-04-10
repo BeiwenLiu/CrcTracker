@@ -145,7 +145,7 @@ $form = new InputFormData;
                 <?php }?>
                 <tr>
                     <td>Total</td>
-                <?php foreach ($newTimes as $t) {?>
+                <?php $counter = 0; foreach ($newTimes as $t) {?>
                         <?php $totalNumber = 0; ?>
                     <?php foreach ($newArray as $t1) { ?>
                         <?php $temp = "{$t1}" . "{$t}"; ?>
@@ -155,8 +155,9 @@ $form = new InputFormData;
                             <?php } } ?>
                     <?php } ?>
                     <?php if (isset($totalNumber)) { ?>
-                        <td><label class="total"> <?php echo $totalNumber; ?> </label></td>
+                        <td><label class="total" name="<?php echo $total[$counter];?>"> <?php echo $totalNumber; ?> </label></td>
                             <?php } ?> 
+                    <?php $counter++; ?>
                     <?php } ?>
                 </tr>
             
