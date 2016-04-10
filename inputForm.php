@@ -12,7 +12,7 @@ if (!isset($_SESSION['username'])) {
 if(!isset($_SESSION['function_ran'])){ 
     date_default_timezone_set("America/New_York");
     $_SESSION['Date'] = date("m/d/Y");
-    $_SESSION['function_ran'] = true; 
+    $_SESSION['function_ran'] = true;
 }
 
 $form = new InputFormData;
