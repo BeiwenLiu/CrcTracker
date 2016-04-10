@@ -19,6 +19,7 @@ $form = new InputFormData;
 
     if (isset($_POST['Submit'])) {
         $form->insert($_SESSION['Date']);
+        $form->insertTotal($_SESSION['Date']);
         unset($_POST['Submit']);
     }
 
@@ -155,7 +156,7 @@ $form = new InputFormData;
                             <?php } } ?>
                     <?php } ?>
                     <?php if (isset($totalNumber)) { ?>
-                        <td><label class="total" name="<?php echo $total[$counter];?>"> <?php echo $totalNumber; ?> </label></td>
+                        <td><input id="inputColumn" class="total" name="<?php echo $total[$counter];?>" style="display:table-cell ; width:100%" value="<?php echo $totalNumber; ?>"></td>
                             <?php } ?> 
                     <?php $counter++; ?>
                     <?php } ?>

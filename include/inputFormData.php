@@ -42,6 +42,13 @@
                     }
                 }
             }
+            $conn->close();
+        }
+        
+        function insertTotalDatabase($date) {
+            require('db.php');
+            require('inputFormHelper.php');
+            $conn = new mysqli($servername, $username, $password, $dbname);
             foreach ($newTimes as $time) {
                 $temp = 'Time' . $time;
                 if ($_POST[$temp] != 0) {
@@ -49,14 +56,49 @@
                     $tempRow = $conn->query($sqlCheck);
                     if ($tempRow->num_rows == 0) {
                         $sql = "INSERT INTO `sheet`(`Date`, `Zone`, `Time`, `People`) VALUES ('$date','Time','$time','$_POST[$temp]')";
+                        $conn->query($sql);
                     } else {
                         $update = "UPDATE `sheet` SET `People`='$_POST[$temp]' WHERE `Date`='$date' AND `Zone`='Time' AND `Time`='$time'";
+                        $conn->query($update);
                     }
                 }
             }
-                        
             $conn->close();
         }
+        
+        
+        function insertTotal ($date) {
+            require('db.php');
+            require('inputFormHelper.php');
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            $counter = 0; 
+            foreach ($newTimes as $t) {
+                $totalNumber = null;
+                $selectQuery = "SELECT `People` FROM `sheet` WHERE `Date`='$date' AND `Time`='$t' AND `Zone`!='Time'";
+                $calculateRow = $conn->query($selectQuery);
+                if ($calculateRow->num_rows != 0) {
+                    while($row = $calculateRow->fetch_assoc()) {
+                        $tempNumber = $row['People'];
+                        $totalNumber = $totalNumber + $tempNumber;
+                    }
+                }
+                if (isset($totalNumber)) {
+                    $sqlCheck = "SELECT `Zone`, `Time` FROM `sheet` WHERE `Date`='$date' AND `Zone`='Time' AND `Time`='$newTimes[$counter]'";
+                    $tempRow = $conn->query($sqlCheck);
+                    if ($tempRow->num_rows == 0) {
+                        $sql = "INSERT INTO `sheet`(`Date`, `Zone`, `Time`, `People`) VALUES ('$date','Time','$newTimes[$counter]','$totalNumber')";
+                        $conn->query($sql);
+                    } else {
+                        $update = "UPDATE `sheet` SET `People`='$totalNumber' WHERE `Date`='$date' AND `Zone`='Time' AND `Time`='$newTimes[$counter]'";
+                        $conn->query($update);
+                    }
+                }
+                $counter++;
+            }
+            $conn->close();
+        }
+
+            
 
         function delete($date) {
             require('db.php');

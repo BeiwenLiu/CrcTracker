@@ -49,7 +49,7 @@ function setDate() {
 function changeType() {
     var container, inputs, index;
     container = document.getElementById('tableStyle');
-    inputs = container.getElementsByTagName('input');
+    inputs = container.getElementsByClassName('columns');
     for (index = 0; index < inputs.length; ++index) {
         if (inputs[index].value != "") {
             inputs[index].disabled = true;
@@ -67,7 +67,7 @@ window.onload = function() {
 function typeToEdit() {
     var container, inputs, index;
     container = document.getElementById('tableStyle');
-    inputs = container.getElementsByTagName('input');
+    inputs = container.getElementsByClassName('columns');
     for (index = 0; index < inputs.length; ++index) {
         if (inputs[index].value != "") {
             inputs[index].disabled = false;
