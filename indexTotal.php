@@ -1,7 +1,6 @@
 <?php
 
 function retrieveLatestTime($date) {
-    $counter = 0;
     require('include/db.php');
     require('include/inputFormHelper.php');
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -17,15 +16,22 @@ function retrieveLatestTime($date) {
             $key = $temp;
             $answer = $rows['People'];
         }
-//        echo $rows['Time'];
-//       while (!$found) {
-//           if ($rows['Time'] == $newTimesReversed[$counter]) {
-//               $answer = $rows['People'];
-//               $found = true;
-//           } else {
-//               $counter++;
-//           }
-//       }
+    }
+    if ($answer == null) {
+        $newDate = date("m/d/Y", strtotime(' -1 day'));
+        $newSelect = "SELECT `People`, `Time` FROM `sheet` WHERE `Date`='$newDate' AND `Zone`='Time'";
+        $newRow = $conn->query($newSelect);
+        $newKey = count($newTimesReversed);
+        while($newRows = $newRow->fetch_assoc()) {
+            $newTemp = array_search($newRows['Time'],$newTimesReversed);
+            if ($newTemp < $newKey) {
+                $newKey = $newTemp;
+                $answer = $newRows['People'];
+            }
+        }
+    }
+    if ($answer == null) {
+        $answer = "Not Available";
     }
     return $answer;
 }
