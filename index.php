@@ -1,7 +1,9 @@
 <?php
+require('indexTotal.php');
 if(!isset($_SESSION['function_ran'])){ 
     date_default_timezone_set("America/New_York");
     $_SESSION['Date'] = date("l, F d, Y");
+    $_SESSION['Date1'] = date("m/d/Y");
     $_SESSION['function_ran'] = true;
 }
 ?>
@@ -131,7 +133,7 @@ if(!isset($_SESSION['function_ran'])){
          <script type="text/javascript">
                         setInterval(updateClock, 1000);
                 </script>
-        <label class="title" id="number">Number of people</label>
+        <label class="title" id="number">Total Number of People: <?php echo retrieveLatestTime($_SESSION['Date1']);?></label>
         <label class="title" id="last">last updated</label>
 <img src="images/CrcFloorPlanAlt.png" class="imageResize" id="shape1"  alt="Insert Alt" usemap="#shape1" border="0">
 
