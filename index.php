@@ -133,8 +133,9 @@ if(!isset($_SESSION['function_ran'])){
          <script type="text/javascript">
                         setInterval(updateClock, 1000);
                 </script>
-        <label class="title" id="number">Total Number of People: <?php echo retrieveLatestTime($_SESSION['Date1']);?></label>
-        <label class="title" id="last">last updated</label>
+        <?php $finalArray = retrieveLatestTime($_SESSION['Date1']);?>
+        <label class="title" id="number">Total Number of People: <?php echo $finalArray[0];?></label>
+        <label class="title" id="last">Last updated: <?php echo $finalArray[1]; ?></label>
 <img src="images/CrcFloorPlanAlt.png" class="imageResize" id="shape1"  alt="Insert Alt" usemap="#shape1" border="0">
 
 <map name="shape1" id="image_map">
