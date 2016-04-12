@@ -32,10 +32,10 @@
                             $sqlCheck = "SELECT `Zone`, `Time` FROM `sheet` WHERE `Date`='$date' AND `Zone`='$titles' AND `Time`='$t'";
                             $tempRow = $conn->query($sqlCheck);
                             if ($tempRow->num_rows == 0) {
-                                $sql = "INSERT INTO `sheet`(`Date`, `Zone`, `Time`, `People`, `InsertTime`) VALUES ('$date','$titles','$t','$_POST[$temp]', DATE_SUB(NOW(), INTERVAL 4 HOUR))";
+                                $sql = "INSERT INTO `sheet`(`Date`, `Zone`, `Time`, `People`, `InsertTime`) VALUES ('$date','$titles','$t','$_POST[$temp]', DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 4 HOUR),'%a, %d %b %Y %r'))";
                                 $conn->query($sql);
                             } else {
-                                $update = "UPDATE `sheet` SET `People`='$_POST[$temp]', `InsertTime'=DATE_SUB(NOW(), INTERVAL 4 HOUR) WHERE `Date`='$date' AND `Zone`='$titles' AND `Time`='$t'";
+                                $update = "UPDATE `sheet` SET `People`='$_POST[$temp]', `InsertTime`=DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 4 HOUR),'%a, %d %b %Y %r') WHERE `Date`='$date' AND `Zone`='$titles' AND `Time`='$t'";
                                 $conn->query($update);
                             }
                         }
@@ -55,10 +55,10 @@
                     $sqlCheck = "SELECT `Zone`, `Time` FROM `sheet` WHERE `Date`='$date' AND `Zone`='Time' AND `Time`='$time'";
                     $tempRow = $conn->query($sqlCheck);
                     if ($tempRow->num_rows == 0) {
-                        $sql = "INSERT INTO `sheet`(`Date`, `Zone`, `Time`, `People`, `InsertTime') VALUES ('$date','Time','$time','$_POST[$temp]',DATE_SUBT(NOW(), INTERVAL 4 HOUR))";
+                        $sql = "INSERT INTO `sheet`(`Date`, `Zone`, `Time`, `People`, `InsertTime') VALUES ('$date','Time','$time','$_POST[$temp]',DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 4 HOUR),'%a, %d %b %Y %r'))";
                         $conn->query($sql);
                     } else {
-                        $update = "UPDATE `sheet` SET `People`='$_POST[$temp]', `InsertTime`=DATE_SUB(NOW(), INTERVAL 4 HOUR) WHERE `Date`='$date' AND `Zone`='Time' AND `Time`='$time'";
+                        $update = "UPDATE `sheet` SET `People`='$_POST[$temp]', `InsertTime`=DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 4 HOUR),'%a, %d %b %Y %r') WHERE `Date`='$date' AND `Zone`='Time' AND `Time`='$time'";
                         $conn->query($update);
                     }
                 }
@@ -87,10 +87,10 @@
                     $sqlCheck = "SELECT `Zone`, `Time` FROM `sheet` WHERE `Date`='$date' AND `Zone`='Time' AND `Time`='$newTimes[$counter]'";
                     $tempRow = $conn->query($sqlCheck);
                     if ($tempRow->num_rows == 0) {
-                        $sql = "INSERT INTO `sheet`(`Date`, `Zone`, `Time`, `People`, `InsertTime`) VALUES ('$date','Time','$newTimes[$counter]','$totalNumber', DATE_SUB(NOW(), INTERVAL 4 HOUR))";
+                        $sql = "INSERT INTO `sheet`(`Date`, `Zone`, `Time`, `People`, `InsertTime`) VALUES ('$date','Time','$newTimes[$counter]','$totalNumber', DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 4 HOUR),'%a, %d %b %Y %r'))";
                         $conn->query($sql);
                     } else {
-                        $update = "UPDATE `sheet` SET `People`='$totalNumber', `InsertTime`=DATE_SUB(NOW(), INTERVAL 4 HOUR) WHERE `Date`='$date' AND `Zone`='Time' AND `Time`='$newTimes[$counter]'";
+                        $update = "UPDATE `sheet` SET `People`='$totalNumber', `InsertTime`=DATE_FORMAT(DATE_SUB(NOW(), INTERVAL 4 HOUR),'%a, %d %b %Y %r') WHERE `Date`='$date' AND `Zone`='Time' AND `Time`='$newTimes[$counter]'";
                         $conn->query($update);
                     }
                 }
