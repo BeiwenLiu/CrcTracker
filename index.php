@@ -1,5 +1,5 @@
 <?php
-require('indexTotal.php');
+require('include/indexTotal.php');
 if(!isset($_SESSION['function_ran'])){ 
     date_default_timezone_set("America/New_York");
     $_SESSION['Date'] = date("l, F d, Y");
@@ -48,7 +48,7 @@ if(!isset($_SESSION['function_ran'])){
     <script language="javascript" src="js/jquery.imagemapster.js"></script>
     
     <script language="javascript" src="js/imageResize.js"></script>
-    <script language="javascript" src="toggle.js"></script>
+    <script language="javascript" src="js/toggle.js"></script>
 
     
 </head>
@@ -81,7 +81,7 @@ if(!isset($_SESSION['function_ran'])){
                         <a class="page-scroll" href="#map1">Map</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="pdf.php">Contact</a>
                     </li>
                 </ul>
             </div>
