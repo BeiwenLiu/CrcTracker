@@ -76,6 +76,16 @@ tr td {
     float:right;
 }
 
+#export {
+    padding:5px;
+    border:1px solid white;
+    margin-top:10px;
+    border-radius: 10px;
+    background-color: red;
+    color:white;
+    float:left;
+}
+
 #inputEdit {
     padding:5px;
     border:1px solid white;
@@ -116,4 +126,32 @@ tr td {
 #inputColumn {
     background: transparent;
     border: none;
+}
+
+.SearchBar {
+    margin-bottom: 20px;
+    color:black;
+    background-color: white;
+    border-radius: 10px;
+    border: 3px solid black;
+}
+
+::-webkit-input-placeholder {
+   color: grey;
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: grey;  
+   text-align: center;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: grey;  
+   text-align: center;
+}
+
+:-ms-input-placeholder {  
+   color: grey;  
+   text-align: center;
 }

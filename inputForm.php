@@ -38,6 +38,21 @@ $form = new InputFormData;
         unset($_POST['next']);
     }
 
+    if (isset($_POST['Search'])) {
+        if (isset($_POST['searchBar'])) {
+            $temp = $_POST['searchBar'];
+            $_SESSION['Date'] = $temp;
+        } else {
+            $errorMessage = "Error";
+        }
+        unset($_POST['Search']);
+    }
+
+    if (isset($_POST['Export'])) {
+        header("Location: /exportPage.php");
+        unset($_POST['Export']);
+    }
+
 
     $form->select($_SESSION['Date']);
 
@@ -99,7 +114,7 @@ $form = new InputFormData;
                         <a><button class="navigationButton" name="logout">Logout</button></a>
                     </li>
                     <li>
-                        <a><button class="navigationButton">Display</button></a>
+                        <a><button class="navigationButton" href="exportPage.php">Display</button></a>
                     </li>
                     <li>
                         <a><button class="navigationButton">Something</button></a>
@@ -114,16 +129,24 @@ $form = new InputFormData;
         <header id="intro3">
         <div id="boxForm1"> 
             <div id="boxFormChild1">
-                <form name="hidden-form" method="POST">
+                <form name="hidden-form" method="POST"> 
+                    <?php if (isset($errorMessage)) {?>
+                        <label <?php echo $errorMessage?>></label>
+                <?php } ?>
+                    <input class="SearchBar" name="searchBar" placeholder=<?php echo $_SESSION['Date']?>> 
+                    <input class="SearchBar" type="Submit" name="Search" value="Search">
+                    </br>
                 <button id="buttonLeft" class="buttonDisplay" type="Submit" name="previous"><font size="3px">previous</font></br><font id="leftArrow" size="60px">&larr;</font></button>
             <label id="labelid"><?php echo $_SESSION['Date']; ?></label>  
 <!--
                 <script type="text/javascript">
                         setDate();
                 </script>
--->
+-->   
             <button id="buttonRight" class="buttonDisplay" type="Submit" name="next"><font size="3px">next</font></br><font size="60px">&rarr;</font></button>
                 </br>
+                
+                
                 <label id="timeid">
                 </label>
                     <script type="text/javascript">
@@ -167,6 +190,7 @@ $form = new InputFormData;
                 <input id="inputSubmit" type="Submit" style="width:100px" value="Submit" name="Submit">
                 <input id="inputEdit" type="button" style="width:100px" value="Edit" name="Edit" onclick="typeToEdit()">
                 </br>
+                <input id="export" type="Submit" style="width:100px" value="Export Table" name="Export">
                 <input id="inputDelete" type="Submit" style="width:100px" value="Delete Table" name="Delete">
                 </form>
             </div>
