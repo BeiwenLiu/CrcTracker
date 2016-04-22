@@ -161,7 +161,7 @@ $form = new InputFormData;
                     <?php if ($something == "Time") {?>
                         <td><?php echo $columns;?></td>
                     <?php } else {?>
-                        <td><input type="number" name="<?php echo $combinedArray[$counter];?>" value="<?php echo $_POST[$combinedArray[$counter]];?>" class="columns"       style="display:table-cell ; width:100%"></td>
+                        <td><input type="number" name="<?php echo $combinedArray[$counter];?>" value="<?php echo $_POST[$combinedArray[$counter]];?>" class="columns" style="display:table-cell ; width:100%"></td>
                     <?php $counter++; ?>
                     <?php } ?>
                 <?php }?>

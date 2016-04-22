@@ -15,13 +15,13 @@ ob_start();
 	$mail->Port = 587;
 	$mail->SMTPSecure = 'tls';
 	$mail->SMTPAuth = true;
-	$mail->Username = "beiwenl@gmail.com";
-	$mail->Password = "sw32ujkn2ei";
-	$mail->setFrom("beiwenl@gmail.com","Beiwen Liu");
-	$mail->addAddress("beiwenl@gmail.com");
+	$mail->Username = "gatechcrcstaff@gmail.com";
+	$mail->Password = "gatechcrcstaffrocks";
+	$mail->setFrom("gatechcrcstaff@gmail.com","Crc Staff");
+	$mail->addAddress("gatechcrcstaff@gmail.com");
 	$mail->Body = $_POST['input'];
-	$mail->Subject = "Testing";
-	$mail->addStringAttachment($pdfDoc, 'pdf-doc.pdf');
+	$mail->Subject = "Table PDF";
+	$mail->addStringAttachment($pdfDoc, $_SESSION['Date'] . '.pdf');
 	if (!$mail->send()) {
 		$error = "Message failed: " . $mail->ErrorInfo;
 	} else {
