@@ -26,4 +26,6 @@ foreach ($newArray as $columns) {
     }
 }
 
+$displayTitles=array("Signature : 0", "L. Dumbbell : 0", "SYNRGY/ABS : 0", "Racquetball : 0", "Stretch Mats : 0", "Bikes : 0", "Steppers : 0", "Treadmills : 0", "Elipticals : 0", "Smith/DAP : 0", "Squat : 0", "H. Dumbbell : 0", "Plate Loaded : 0", "MTS : 0");
+
 ?>

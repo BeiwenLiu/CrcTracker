@@ -33,12 +33,32 @@ function retrieveLatestTime($date) {
             }
         }
     }
+    $timeAnswer = $newTimesReversed[$temp];
     if ($answer == null) {
         $answer = "Not Available";
         $timeUpdate = "Not Available";
+        $timeAnswer = null;
     }
-    $answerArray = array($answer, $timeUpdate);
+    $answerArray = array($answer, $timeUpdate, $timeAnswer);
     return $answerArray;
+}
+
+function retrieveNumbers($date, $time) {
+    require('include/db.php');
+    require('include/inputFormHelper.php');
+    $tempArray = $newArray;
+    $returnArray = $displayTitles;
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    $select = "SELECT `People`, `Zone` FROM `sheet` WHERE `Date`='$date' AND `Time` = '$time' AND `Zone` != 'Time'";
+    $row = $conn->query($select);
+    while($rows = $row->fetch_assoc()) {
+        $temp = array_search($rows['People'],$tempArray);
+        $people = $rows['People'];
+        $timeUpdate = $rows['Zone'];
+        $returnArray[$temp] = $timeUpdate . " : " . $people;
+    }
+
+    return array($time);
 }
 ?>
 

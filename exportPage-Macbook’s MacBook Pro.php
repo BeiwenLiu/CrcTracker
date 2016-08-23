@@ -42,7 +42,7 @@ ob_start();
 	$mail->Password = "gatechcrcstaffrocks";
 	$mail->setFrom("gatechcrcstaff@gmail.com","Crc Staff");
 	$mail->addAddress($_POST['emailRecipient']);
-	$mail->Body = "hey";
+	$mail->Body = "PDF";
 	$mail->Subject = "Table PDF";
 	$mail->addStringAttachment($pdfDoc, $html . '.pdf');
 	if (!$mail->send()) {
