@@ -11,6 +11,7 @@ function retrieveLatestTime($date) {
     $key = count($newTimesReversed);
     $answer = null;
     $timeUpdate = null;
+    $temp = 0;
     while($rows = $row->fetch_assoc()) {
         $temp = array_search($rows['Time'],$newTimesReversed);
         if ($temp < $key) {
